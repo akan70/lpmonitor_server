@@ -23,14 +23,14 @@ recordRoutes.route("/getCoinList").get(function (req, res) {
   let page_num = parseInt(req.query.count_per_page);
   let start_num = parseInt(req.query.page_num) * parseInt(req.query.count_per_page);
   console.log("fetching from ", start_num, " ", page_num);
-  res.json({called:"ssss"});
-  return;
   db_connect
     .collection("lptoken")
     .find({})
     .skip(start_num)
     .limit(page_num)
     .toArray(function (err, result) {
+      res.json({called:"ssss!!"});
+      return;
       if (err) throw err;
       let finalAry=[];
       let aryIndex = 0;
