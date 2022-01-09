@@ -20,11 +20,11 @@ recordRoutes.route("/ping").get(function (req, res) {
 recordRoutes.route("/getCoinList").get(function (req, res) {
   let db_connect = dbo.getDb("");
   console.log(req.query);
-  res.json({called:"ssss"});
-  return;
   let page_num = parseInt(req.query.count_per_page);
   let start_num = parseInt(req.query.page_num) * parseInt(req.query.count_per_page);
   console.log("fetching from ", start_num, " ", page_num);
+  res.json({called:"ssss"});
+  return;
   db_connect
     .collection("lptoken")
     .find({})
