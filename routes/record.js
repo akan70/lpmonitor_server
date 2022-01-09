@@ -29,8 +29,6 @@ recordRoutes.route("/getCoinList").get(function (req, res) {
     .skip(start_num)
     .limit(page_num)
     .toArray(function (err, result) {
-      res.json({called:"ssss!!"});
-      return;
       if (err) throw err;
       let finalAry=[];
       let aryIndex = 0;
